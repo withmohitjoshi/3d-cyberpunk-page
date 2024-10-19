@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberPunk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main w-full">
+      <nav
+        class="fixed top-0 left-0 bg-opacity-50 text-white z-50 px-4 sm:px-10 py-3 sm:py-5 w-full"
+      >
+        <div class="flex flex-col sm:flex-row justify-between items-center w-full">
+          <div class="flex items-center justify-between w-full sm:w-auto">
+            <img
+              src="./3d-rendered-the-cyberpunk-logo.png"
+              alt="CyberPunk Logo"
+              class="h-12 sm:h-20 w-auto mr-2 mix-blend-luminosity filter saturate-150 contrast-125"
+            />
+            <button class="sm:hidden text-white" id="menu-toggle">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
+          <ul class="hidden sm:flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 text-lg mt-4 sm:mt-0" id="menu">
+            <li>
+              <a
+                href="#"
+                class="text-white hover:text-shadow-[0_0_10px_#0ff] transition-all duration-300"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-white hover:text-shadow-[0_0_10px_#0ff] transition-all duration-300"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-white hover:text-shadow-[0_0_10px_#0ff] transition-all duration-300"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-white hover:text-shadow-[0_0_10px_#0ff] transition-all duration-300"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="w-full h-[100vh] overflow-hidden">
+        <img
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-lighten w-full sm:w-3/4 md:w-2/3 lg:w-1/2 max-w-[90vw] filter saturate-150 contrast-125"
+          src="./3d-rendered-the-cyberpunk-logo.png"
+          alt="Cyberpunk Logo"
+        />
+        <canvas id="canvas"></canvas>
+      </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script>
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu').classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
